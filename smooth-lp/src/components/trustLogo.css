@@ -1,0 +1,49 @@
+/* src/components/trustLogo.css */
+
+/* 1) Keyframes: move 50% para a esquerda para “fechar” perfeitamente o loop */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 2) Estado inicial sem animação (evita mismatch de SSR/Hydration) */
+.marquee-content {
+  animation: none;
+  will-change: transform;
+}
+
+/* 3) Quando estiver no client, ligamos a animação */
+.running {
+  animation: scroll var(--marquee-duration, 40s) linear infinite;
+}
+
+/* 4) Pausa no hover do container (classe .group no wrapper) */
+.group:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* 5) Utilitários de duração (sem inline style) */
+.marquee-20 {
+  --marquee-duration: 20s;
+}
+.marquee-30 {
+  --marquee-duration: 30s;
+}
+.marquee-40 {
+  --marquee-duration: 40s;
+} 
+.marquee-60 {
+  --marquee-duration: 60s;
+}
+
+/* (Opcional) Acessibilidade: respeita usuários com redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-content,
+  .running {
+    animation: none !important;
+  }
+}
