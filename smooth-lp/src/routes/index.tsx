@@ -1,16 +1,16 @@
 // src/routes/index.tsx
 
-import { createFileRoute } from '@tanstack/react-router'
-import TrustLogos from '../components/trustLogos'
-import HorizontalScrollCards from '../components/horizontalScroll'
-import LoadingOverlay from '../components/loadingOverlay'
-import StickyPanel from '../components/stickyPanel'
-import Hero from '../components/hero'
-import Intro from '../components/intro'
+import { createFileRoute } from "@tanstack/react-router";
+import TrustLogos from "../components/trustLogos";
+import HorizontalScrollCards from "../components/horizontalScroll";
+import LoadingOverlay from "../components/loadingOverlay";
+import StickyPanel from "../components/stickyPanel";
+import Hero from "../components/hero";
+import Intro from "../components/intro";
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   component: RouteComponent,
-})
+});
 
 function RouteComponent() {
   return (
@@ -19,7 +19,7 @@ function RouteComponent() {
       <Hero />
       <TrustLogos />
 
-      <StickyPanel zIndex={1} className="w-full" height="h-screen" fullBleed>
+      <StickyPanel zIndex={1} className="w-full" height="h-[100svh]" fullBleed>
         <Intro embed />
       </StickyPanel>
 
@@ -27,7 +27,7 @@ function RouteComponent() {
         zIndex={2}
         bgColor="bg-gradient-to-br from-teal-500 to-cyan-600"
         title="Painel 2"
-        height="h-screen"
+        height="h-[100svh]"
       >
         <p>Eu deslizei POR CIMA do Painel 1.</p>
       </StickyPanel>
@@ -52,5 +52,5 @@ function RouteComponent() {
         <HorizontalScrollCards />
       </div>
     </main>
-  )
+  );
 }
