@@ -18,8 +18,8 @@ function RouteComponent() {
       <LoadingOverlay />
       <Hero />
       <TrustLogos />
-
-      <StickyPanel zIndex={1} className="w-full" height="h-screen" fullBleed>
+      {/* 
+      <StickyPanel zIndex={1} className="w-full" height="h-[100svh]" fullBleed>
         <Intro embed />
       </StickyPanel>
 
@@ -27,7 +27,7 @@ function RouteComponent() {
         zIndex={2}
         bgColor="bg-gradient-to-br from-teal-500 to-cyan-600"
         title="Painel 2"
-        height="h-screen"
+        height="h-[100svh]"
       >
         <p>Eu deslizei POR CIMA do Painel 1.</p>
       </StickyPanel>
@@ -50,7 +50,7 @@ function RouteComponent() {
           <h2 className="text-5xl">A rolagem normal continua...</h2>
         </section>
         <HorizontalScrollCards />
-      </div>
+      </div> */}
     </main>
   )
 }

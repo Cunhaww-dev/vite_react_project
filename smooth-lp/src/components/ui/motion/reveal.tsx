@@ -12,11 +12,6 @@ const fadeUpBlur: Variants = {
   },
 }
 
-/**
- * Revela qualquer conteúdo com fade-up + blur quando entra na viewport.
- * - `as` permite trocar a tag (h1, p, div...).
- * - `amount`: quanto do elemento precisa entrar (0–1).
- */
 export function Reveal<T extends ElementType = 'div'>({
   as,
   children,

@@ -3,19 +3,8 @@ import { Typography } from './ui/typography'
 
 export default function Hero() {
   return (
-    <main className="relative flex h-screen items-center justify-center overflow-hidden bg-linear-to-b from-zinc-50 to-zinc-100 text-zinc-900">
-      <div
-        className="absolute inset-0 bg-no-repeat bg-center bg-cover opacity-60 mix-blend-multiply pointer-events-none"
-        style={{ backgroundImage: "url('/shadowBackground.svg')" }}
-      />
-
-      {/* Glow vertical suave no centro (coluna de luz) */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(40%_100%_at_50%_10%,rgba(0,0,0,0.07),transparent_60%)]" />
-
-      {/* Vignette sutil nas bordas para foco no centro */}
-      <div className="pointer-events-none absolute inset-0 mask-[radial-gradient(90%_70%_at_50%_50%,black_60%,transparent_100%)] bg-[radial-gradient(120%_80%_at_50%_50%,rgba(0,0,0,0.08),transparent_60%)]" />
-
-      <section className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+    <main className="flex h-[75dvh] pt-16 items-center justify-center overflow-hidden ">
+      <section className="w-full mx-auto md:py-24 grid place-items-center text-center gap-6">
         <Typography
           as="h1"
           variant="display"
@@ -31,42 +20,14 @@ export default function Hero() {
           visões ousadas em sucesso no mercado
         </Typography>
 
-        <ul className="mx-auto mt-10 flex items-center justify-center gap-6 text-xs font-medium tracking-wider text-zinc-700">
-          <li className="relative pl-4">
-            <span
-              className="absolute left-0 top-1/2 -translate-y-1/2 h-3.5 w-px bg-zinc-300/80"
-              aria-hidden
-            />
-            WEB
-          </li>
-          <li className="relative pl-4">
-            <span
-              className="absolute left-0 top-1/2 -translate-y-1/2 h-3.5 w-px bg-zinc-300/80"
-              aria-hidden
-            />
-            DESIGN
-          </li>
-          <li className="relative pl-4">
-            <span
-              className="absolute left-0 top-1/2 -translate-y-1/2 h-3.5 w-px bg-zinc-300/80"
-              aria-hidden
-            />
-            SOCIAL
-          </li>
-          <li className="relative pl-4">
-            <span
-              className="absolute left-0 top-1/2 -translate-y-1/2 h-3.5 w-px bg-zinc-300/80"
-              aria-hidden
-            />
-            APPS
-          </li>
-        </ul>
-
-        <div className="absolute top-125 left-1/2 -translate-x-1/2">
-          <button className="flex items-center gap-2 px-6 py-2 rounded-full bg-zinc-900 text-zinc-50 text-sm font-medium hover:bg-zinc-800 transition-colors">
-            Role para descobrir
-            <ChevronDown className="w-4 h-4" />
-          </button>
+        <div className="mt-4 md:mt-6 flex justify-center">
+          <a
+            href="#next"
+            className="inline-flex px-4 py-1.5 items-center gap-2 rounded-full text-sm font-medium bg-zinc-900 text-zinc-50 hover:bg-zinc-700 transition-colors duration-200"
+          >
+            <span className="pl-1">Role para descobrir</span>
+            <ChevronDown className="h-4 w-4" />
+          </a>
         </div>
       </section>
     </main>

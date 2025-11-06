@@ -21,7 +21,7 @@ export default function StickyPanel({
   children,
   zIndex = 1,
   className = '',
-  height = 'h-[80vh]',
+  height = 'h-[100svh]',
   fullBleed = false,
   contentClassName,
 }: StickyPanelProps) {
@@ -50,7 +50,7 @@ export default function StickyPanel({
       style={{ zIndex }}
       className={`
         ${height}
-        w-full sticky top-0
+        w-full sticky top-0 rounded-t-[5rem]
         ${bgColor} ${className}
       `}
     >
@@ -71,7 +71,6 @@ export default function StickyPanel({
           </h1>
         )}
 
-        {/* Se quiser que o children não herde tipografia, não o envolva em outro wrapper */}
         {children}
       </motion.div>
     </section>
