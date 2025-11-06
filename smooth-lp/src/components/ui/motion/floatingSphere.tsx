@@ -1,25 +1,25 @@
-"use client";
+'use client'
 
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import type { RefObject } from "react";
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
+import type { RefObject } from 'react'
 
-type Props = { targetRef: RefObject<HTMLElement | null> };
+type Props = { targetRef: RefObject<HTMLElement | null> }
 
 export default function FloatingSphere({ targetRef }: Props) {
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start end", "end start"],
-  });
+    offset: ['start end', 'end start'],
+  })
 
-  const yRaw = useTransform(scrollYProgress, [0, 1], [100, -550]);
-  const y = useSpring(yRaw, { stiffness: 80, damping: 20, mass: 0.25 });
+  const yRaw = useTransform(scrollYProgress, [0, 1], [100, -550])
+  const y = useSpring(yRaw, { stiffness: 80, damping: 20, mass: 0.25 })
 
   const opacityRaw = useTransform(
     scrollYProgress,
     [0, 0.05, 0.95, 1],
-    [0, 1, 1, 0]
-  );
-  const opacity = useSpring(opacityRaw, { stiffness: 120, damping: 40 });
+    [0, 1, 1, 0],
+  )
+  const opacity = useSpring(opacityRaw, { stiffness: 120, damping: 40 })
 
   return (
     <motion.div
@@ -34,5 +34,5 @@ export default function FloatingSphere({ targetRef }: Props) {
         className="opacity-90"
       />
     </motion.div>
-  );
+  )
 }

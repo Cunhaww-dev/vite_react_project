@@ -1,25 +1,25 @@
 // src/components/intro.tsx
-"use client";
+'use client'
 
-import { useRef } from "react";
-import { Reveal } from "./ui/motion/reveal";
-import BackgroundSpheres from "./backgroundSpheres";
+import { useRef } from 'react'
+import { Reveal } from './ui/motion/reveal'
+import BackgroundSpheres from './backgroundSpheres'
 
 type IntroProps = {
-  embed?: boolean;
-};
+  embed?: boolean
+}
 
 export default function Intro({ embed = false }: IntroProps) {
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null)
 
   return (
     <main
       ref={sectionRef}
       className={[
-        "relative flex items-center justify-center overflow-hidden text-center",
-        "bg-zinc-900",
-        embed ? "h-full" : "h-screen",
-      ].join(" ")}
+        'relative flex items-center justify-center overflow-hidden text-center',
+        'bg-zinc-900',
+        embed ? 'h-full' : 'h-screen',
+      ].join(' ')}
     >
       {/* FX de Fundo (sem parallax) */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-900" />
@@ -57,7 +57,7 @@ export default function Intro({ embed = false }: IntroProps) {
           <p className="text-sm text-zinc-400">
             <span className="bg-gradient-to-b from-purple-300 to-purple-500 bg-clip-text text-transparent">
               único
-            </span>{" "}
+            </span>{' '}
             é mais do que estilo — é estratégia.
           </p>
         </Reveal>
@@ -73,5 +73,5 @@ export default function Intro({ embed = false }: IntroProps) {
         maxSize={80}
       />
     </main>
-  );
+  )
 }

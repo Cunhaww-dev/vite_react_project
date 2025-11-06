@@ -35,9 +35,12 @@
 }
 .marquee-40 {
   --marquee-duration: 40s;
-} 
+}
 .marquee-60 {
   --marquee-duration: 60s;
+}
+.marquee-80 {
+  --marquee-duration: 80s;
 }
 
 /* (Opcional) Acessibilidade: respeita usuários com redução de movimento */

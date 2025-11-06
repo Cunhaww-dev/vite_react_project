@@ -1,16 +1,16 @@
 // src/routes/index.tsx
 
-import { createFileRoute } from "@tanstack/react-router";
-import TrustLogos from "../components/trustLogos";
-import HorizontalScrollCards from "../components/horizontalScroll";
-import LoadingOverlay from "../components/loadingOverlay";
-import StickyPanel from "../components/stickyPanel";
-import Hero from "../components/hero";
-import Intro from "../components/intro";
+import { createFileRoute } from '@tanstack/react-router'
+import TrustLogos from '../components/trustLogos'
+import HorizontalScrollCards from '../components/horizontalScroll'
+import LoadingOverlay from '../components/loadingOverlay'
+import StickyPanel from '../components/stickyPanel'
+import Hero from '../components/hero'
+import Intro from '../components/intro'
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute('/')({
   component: RouteComponent,
-});
+})
 
 function RouteComponent() {
   return (
@@ -18,7 +18,7 @@ function RouteComponent() {
       <LoadingOverlay />
       <Hero />
       <TrustLogos />
-
+      {/* 
       <StickyPanel zIndex={1} className="w-full" height="h-[100svh]" fullBleed>
         <Intro embed />
       </StickyPanel>
@@ -50,7 +50,7 @@ function RouteComponent() {
           <h2 className="text-5xl">A rolagem normal continua...</h2>
         </section>
         <HorizontalScrollCards />
-      </div>
+      </div> */}
     </main>
-  );
+  )
 }
