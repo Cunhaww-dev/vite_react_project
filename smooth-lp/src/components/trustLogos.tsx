@@ -1,34 +1,34 @@
-"use client";
-import { useEffect, useState } from "react";
-import Logo from "./ui/logo";
-import "./trustLogo.css";
+'use client'
+import { useEffect, useState } from 'react'
+import Logo from './ui/logo'
+import './trustLogo.css'
 
 const svgFiles = [
-  "html5.svg",
-  "css3.svg",
-  "typescript.svg",
-  "react.svg",
-  "vitejs.svg",
-  "tailwindcss.svg",
-  "framermotion.svg",
-  "gsap.svg",
-  "pnpm.svg",
-  "git.svg",
-  "github.svg",
-  "vercel.svg",
-  "biome.svg",
-  "figma.svg",
-  "claude.svg",
-  "lovable.svg",
-  "vscode.svg",
-] as const;
+  'html5.svg',
+  'css3.svg',
+  'typescript.svg',
+  'react.svg',
+  'vitejs.svg',
+  'tailwindcss.svg',
+  'framermotion.svg',
+  'gsap.svg',
+  'pnpm.svg',
+  'git.svg',
+  'github.svg',
+  'vercel.svg',
+  'biome.svg',
+  'figma.svg',
+  'claude.svg',
+  'lovable.svg',
+  'vscode.svg',
+] as const
 
 export default function TrustLogos() {
-  const [isClient, setIsClient] = useState(false);
-  useEffect(() => setIsClient(true), []);
+  const [isClient, setIsClient] = useState(false)
+  useEffect(() => setIsClient(true), [])
 
   // duplica para o efeito “marquee” contínuo
-  const allLogos = [...svgFiles, ...svgFiles, ...svgFiles, ...svgFiles];
+  const allLogos = [...svgFiles, ...svgFiles, ...svgFiles, ...svgFiles]
 
   return (
     <section className="py-10 overflow-hidden">
@@ -40,7 +40,7 @@ export default function TrustLogos() {
         <div className="overflow-hidden">
           <div
             className={`marquee-content flex gap-8 w-max ${
-              isClient ? "running" : ""
+              isClient ? 'running' : ''
             }`}
           >
             {allLogos.map((file, i) => (
@@ -53,5 +53,5 @@ export default function TrustLogos() {
         <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-linear-to-l from-zinc-50 to-transparent" />
       </div>
     </section>
-  );
+  )
 }

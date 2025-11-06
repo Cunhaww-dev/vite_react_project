@@ -1,5 +1,5 @@
-import { ChevronDown } from "lucide-react";
-import { Typography } from "./ui/typography";
+import { ChevronDown } from 'lucide-react'
+import { Typography } from './ui/typography'
 
 export default function Hero() {
   return (
@@ -31,5 +31,5 @@ export default function Hero() {
         </div>
       </section>
     </main>
-  );
+  )
 }
