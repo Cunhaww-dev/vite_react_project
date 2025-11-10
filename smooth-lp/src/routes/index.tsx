@@ -2,11 +2,11 @@
 
 import { createFileRoute } from '@tanstack/react-router'
 import TrustLogos from '../components/trustLogos'
-import HorizontalScrollCards from '../components/horizontalScroll'
+// import HorizontalScrollCards from '../components/horizontalScroll'
 import LoadingOverlay from '../components/loadingOverlay'
-import StickyPanel from '../components/stickyPanel'
+// import StickyPanel from '../components/stickyPanel'
 import Hero from '../components/hero'
-import Intro from '../components/intro'
+// import Intro from '../components/intro'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
