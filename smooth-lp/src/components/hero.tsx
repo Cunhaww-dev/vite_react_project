@@ -3,7 +3,7 @@ import { Typography } from './ui/typography'
 
 export default function Hero() {
   return (
-    <main className="flex h-[75dvh] pt-16 items-center justify-center overflow-hidden ">
+    <main className="flex h-[75dvh] pt-32 items-center justify-center overflow-hidden ">
       <section className="w-full mx-auto md:py-24 grid place-items-center text-center gap-6">
         <Typography
           as="h1"
