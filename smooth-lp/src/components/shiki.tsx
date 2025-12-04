@@ -1,5 +1,4 @@
-// src/components/ui/CodePreview.tsx
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Highlighter } from 'shiki'
 
 let shikiHighlighter: Highlighter | null = null
@@ -9,8 +8,8 @@ interface Props {
   code: string
   lang?: string
   theme?: string
-  className?: string // ex: "w-full md:max-w-[700px]"
-  heightClass?: string // ex: "h-[260px] sm:h-[300px] md:h-[360px]"
+  className?: string
+  heightClass?: string
 }
 
 export default function ShikoBlockCode({

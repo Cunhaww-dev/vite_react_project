@@ -1,16 +1,16 @@
 // src/routes/index.tsx
 
-import { createFileRoute } from "@tanstack/react-router";
-import TrustLogos from "../components/trustLogos";
-import Hero from "../components/hero";
-import StickyPanel from "../components/stickyPanel";
-import ShikoBlockCode from "../components/shiki";
-import HorizontalScrollCards from "../components/horizontalScroll";
-import { SplitLetters } from "../components/ui/motion/split-text";
+import { createFileRoute } from '@tanstack/react-router'
+import TrustLogos from '../components/trustLogos'
+import Hero from '../components/hero'
+import StickyPanel from '../components/stickyPanel'
+import ShikoBlockCode from '../components/shiki'
+import HorizontalScrollCards from '../components/horizontalScroll'
+import { SplitLetters } from '../components/ui/motion/split-text'
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute('/')({
   component: RouteComponent,
-});
+})
 
 function RouteComponent() {
   const TS_EXAMPLE = `export function mergeConfig<T extends object>(
@@ -25,7 +25,7 @@ if (!override) return base;
     theme: override?.theme ?? base.theme,
   } as const;
 }
-`;
+`
 
   return (
     <main>
@@ -211,5 +211,5 @@ if (!override) return base;
         <HorizontalScrollCards />
       </div> */}
     </main>
-  );
+  )
 }
