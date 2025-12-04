@@ -40,7 +40,7 @@ export default function Header() {
             ${scrolled ? 'text-zinc-50' : 'text-zinc-900'}
           `}
         >
-          Logo
+          Lucas Fabri
         </Link>
 
         {/* Navegação */}
