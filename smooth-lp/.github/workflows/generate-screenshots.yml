@@ -1,0 +1,41 @@
+name: Generate screenshots
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+        # Se você usa yarn, troque por `yarn install`
+
+      - name: Run screenshot (Puppeteer)
+        env:
+          TZ: "America/Sao_Paulo"
+        run: |
+          node scripts/screenshot.js "https://dashboard-boilerplate-seven.vercel.app/dashboard" public/images/dashboard-thumb-4x5.png
+
+      - name: Convert PNG -> WebP and create variants
+        run: node scripts/convert-to-webp.js
+
+      - name: Commit generated images
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git add public/images/dashboard-thumb-4x5.png public/images/dashboard-thumb-4x5.webp public/images/dashboard-thumb-16x9.webp public/images/dashboard-thumb-1x1.webp || true
+          git commit -m "chore: update generated screenshots" || echo "no changes to commit"
+          git push || echo "push failed (possibly no permission)"
