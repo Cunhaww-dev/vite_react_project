@@ -31,15 +31,15 @@ export default function TrustLogos() {
   const allLogos = [...svgFiles, ...svgFiles, ...svgFiles, ...svgFiles]
 
   return (
-    <section className="py-10 overflow-hidden">
+    <section className="py-8 overflow-hidden bg-zinc-50">
       <p className="text-center pb-4 text-sm font-semibold uppercase tracking-widest">
         Tecnologias utilizadas
       </p>
 
-      <div className="relative w-full py-6 group marquee-60">
+      <div className="relative w-full py-4 group marquee-60">
         <div className="overflow-hidden">
           <div
-            className={`marquee-content flex gap-8 w-max ${
+            className={`marquee-content flex gap-6 w-max ${
               isClient ? 'running' : ''
             }`}
           >
