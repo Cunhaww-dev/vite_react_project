@@ -147,7 +147,7 @@ export default function ShikoBlockCode({
 
       {/* conteúdo: ocupa o restante, é scrollable */}
       <div
-        className="px-3 sm:px-4 pb-4 overflow-auto h-[calc(100%_-_48px)]" // 48px = header height aproximada; ajusta conforme necessário
+        className="px-3 sm:px-4 pb-4 overflow-auto h-[calc(100%-48px)]" // 48px = header height aproximada; ajusta conforme necessário
         style={textColor ? { color: textColor } : undefined}
       >
         {loading ? (
