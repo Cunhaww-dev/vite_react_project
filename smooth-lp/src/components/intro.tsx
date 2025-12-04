@@ -3,7 +3,6 @@
 
 import { useRef } from 'react'
 import { Reveal } from './ui/motion/reveal'
-import BackgroundSpheres from './backgroundSpheres'
 
 type IntroProps = {
   embed?: boolean
