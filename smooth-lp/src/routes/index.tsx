@@ -6,12 +6,15 @@ import ShikoBlockCode from '../components/shiki'
 import HorizontalScrollCards from '../components/horizontalScroll'
 import { SplitLetters } from '../components/ui/motion/split-text'
 import WhatsButtonSimple from '../components/ui/whatsapp-btn'
+import { useModal } from '../lib/modal-context'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
+  const { openModal } = useModal()
+
   const TS_EXAMPLE = `export function mergeConfig<T extends object>(
   base: T,
   override?: Partial<T>
@@ -59,9 +62,9 @@ if (!override) return base;
                 </p>
 
                 <nav className="mt-8">
-                  <a
-                    href="#contato"
-                    className="inline-flex items-center gap-2 px-5 py-3 bg-blue-500 text-white rounded-md text-sm font-medium shadow hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-200"
+                  <button
+                    onClick={() => openModal()}
+                    className="inline-flex items-center gap-2 px-5 py-3 bg-sky-600 text-white rounded-md text-sm font-medium shadow hover:bg-sky-700 cursor-pointer transition-colors duration-200"
                   >
                     Entre em contato
                     <svg
@@ -78,7 +81,7 @@ if (!override) return base;
                         d="M9 5l7 7-7 7"
                       />
                     </svg>
-                  </a>
+                  </button>
                 </nav>
               </header>
 

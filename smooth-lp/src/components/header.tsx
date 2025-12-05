@@ -2,11 +2,11 @@
 
 import { Link } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
-import ContactModal from './contactModal'
+import { useModal } from '../lib/modal-context'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
-  const [isModalOpen, setIsModalOpen] = useState(false) // 2. Estado para controlar o modal
+  const { openModal } = useModal() // pega a função para abrir o modal
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -14,12 +14,6 @@ export default function Header() {
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  // 3. Função para abrir o modal
-  const handleOpenModal = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault() // Previne a navegação padrão do link
-    setIsModalOpen(true)
-  }
 
   return (
     <>
@@ -73,7 +67,7 @@ export default function Header() {
 
             {/* 4. Botão de Contato modificado */}
             <button
-              onClick={handleOpenModal}
+              onClick={() => openModal()}
               className={`
                 rounded-full px-4 py-2 font-medium cursor-pointer
                 transition-colors duration-200
@@ -89,12 +83,6 @@ export default function Header() {
           </nav>
         </div>
       </header>
-
-      {/* 5. Renderize o modal aqui */}
-      <ContactModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
     </>
   )
 }
