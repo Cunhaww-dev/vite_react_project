@@ -27,7 +27,7 @@ if (!override) return base;
 `;
 
   return (
-    <main className="h-[100dvh]">
+    <main className="min-h-screen">
       <Hero />
       <TrustLogos />
 
@@ -135,7 +135,7 @@ if (!override) return base;
                   src="/stack-system.svg"
                   alt="Mapa de tecnologias"
                   loading="lazy"
-                  className="w-full max-h-[280px] sm:max-h-120 md:max-w-[700px] object-contain mx-auto"
+                  className="w-full max-h-[280px] sm:max-h-100 md:max-w-[700px] object-contain mx-auto"
                 />
               </figure>
             </div>
