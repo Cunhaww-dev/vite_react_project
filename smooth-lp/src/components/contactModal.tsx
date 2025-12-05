@@ -23,7 +23,7 @@ const contactFormSchema = z.object({
       if (!val || val.trim() === '') return true
       const digits = val.replace(/\D/g, '')
       return digits.length === 10 || digits.length === 11
-    }, 'Insira um telefone válido.')
+    }, 'Insira um número válido.')
     .transform((v) => {
       if (!v) return undefined
       const digits = v.replace(/\D/g, '')
