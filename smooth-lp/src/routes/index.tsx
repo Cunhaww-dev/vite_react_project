@@ -1,15 +1,15 @@
-import { createFileRoute } from '@tanstack/react-router'
-import TrustLogos from '../components/trustLogos'
-import Hero from '../components/hero'
-import StickyPanel from '../components/stickyPanel'
-import ShikoBlockCode from '../components/shiki'
-import HorizontalScrollCards from '../components/horizontalScroll'
-import { SplitLetters } from '../components/ui/motion/split-text'
-import WhatsButtonSimple from '../components/ui/whatsapp-btn'
+import { createFileRoute } from "@tanstack/react-router";
+import TrustLogos from "../components/trustLogos";
+import Hero from "../components/hero";
+import StickyPanel from "../components/stickyPanel";
+import ShikoBlockCode from "../components/shiki";
+import HorizontalScrollCards from "../components/horizontalScroll";
+import { SplitLetters } from "../components/ui/motion/split-text";
+import WhatsButtonSimple from "../components/ui/whatsapp-btn";
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   component: RouteComponent,
-})
+});
 
 function RouteComponent() {
   const TS_EXAMPLE = `export function mergeConfig<T extends object>(
@@ -24,10 +24,10 @@ if (!override) return base;
     theme: override?.theme ?? base.theme,
   } as const;
 }
-`
+`;
 
   return (
-    <main>
+    <main className="h-[100dvh]">
       <Hero />
       <TrustLogos />
 
@@ -176,5 +176,5 @@ if (!override) return base;
       </div>
       <WhatsButtonSimple />
     </main>
-  )
+  );
 }

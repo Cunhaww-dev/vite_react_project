@@ -1,23 +1,23 @@
-import { getExperience } from '../utiils/experience'
+import { getExperience } from "../utiils/experience";
 
-const careerStart = '2023'
+const careerStart = "2023";
 
 // função de helper para formatar o texto PT-BR
 function formatExperienceText(years: number, months: number): string {
   if (years >= 1) {
-    return `${years} ${years === 1 ? 'ano' : 'anos'} de experiência`
+    return `${years} ${years === 1 ? "ano" : "anos"} de experiência`;
   }
   if (months > 0) {
-    return `< 1 ano (${months} ${months === 1 ? 'mês' : 'meses'})`
+    return `< 1 ano (${months} ${months === 1 ? "mês" : "meses"})`;
   }
-  return '< 1 ano'
+  return "< 1 ano";
 }
 
 export default function Hero() {
-  const { years, months } = getExperience(careerStart)
-  const experienceText = formatExperienceText(years, months)
+  const { years, months } = getExperience(careerStart);
+  const experienceText = formatExperienceText(years, months);
   return (
-    <main className="relative w-full h-screen bg-white overflow-hidden flex items-center">
+    <main className="relative w-full h-[100dvh] bg-white overflow-hidden flex items-center">
       {/* Background gradients e formas geométricas */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradiente principal suave */}
@@ -144,5 +144,5 @@ export default function Hero() {
         </div>
       </section>
     </main>
-  )
+  );
 }
