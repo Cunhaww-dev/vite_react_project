@@ -130,7 +130,7 @@ if (!override) return base;
               </header>
 
               {/* SVG — mobile segundo, desktop primeiro */}
-              <figure className="order-2 md:order-1 md:flex md:justify-start">
+              <figure className="order-2 md:order-1 md:flex md:justify-start sm:pb-20">
                 <img
                   src="/stack-system.svg"
                   alt="Mapa de tecnologias"
