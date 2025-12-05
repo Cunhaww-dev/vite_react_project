@@ -37,7 +37,7 @@ export default function Hero() {
       </div>
 
       <section className="relative z-10 mx-auto max-w-7xl px-6 w-full">
-        <div className="flex flex-col items-center text-center py-20 pt-12 md:pt-40">
+        <div className="flex flex-col items-center text-center py-20 pt-28 md:pt-40">
           {/* Foto circular no centro */}
           <figure className="relative mb-8">
             <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden ring-4 ring-slate-100 shadow-2xl bg-slate-50">
