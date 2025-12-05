@@ -51,3 +51,28 @@
 .animate-fade-in-delay-1s {
   animation: fade-in 1s ease-out 1s forwards;
 }
+
+/* safe-area helpers — iOS (env + constant) e fallback zero */
+.safe-area-top {
+  /* safari/new spec */
+  padding-top: env(safe-area-inset-top);
+  /* legacy iOS */
+  padding-top: constant(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: constant(safe-area-inset-bottom);
+}
+
+/* utilitário que combina compensação fixa (header height) + safe area */
+.pt-header-safe {
+  /* exemplo: header tem 5rem (h-20 = 5rem) -> ajusta conforme sua altura */
+  padding-top: calc(5rem + env(safe-area-inset-top));
+  padding-top: calc(5rem + constant(safe-area-inset-top));
+}
+
+/* fallback com valor padrão (para navegadores que não suportam env) */
+.pt-header-safe-fallback {
+  padding-top: calc(5rem + var(--safe-area-top, 0px));
+}
