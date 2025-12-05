@@ -1,16 +1,16 @@
-'use client'
-import { Link } from '@tanstack/react-router'
-import { useEffect, useState } from 'react'
+"use client";
+import { Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8)
-    onScroll()
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header
@@ -20,8 +20,8 @@ export default function Header() {
         transition-colors duration-200
         ${
           scrolled
-            ? 'backdrop-blur-md bg-zinc-900/50 shadow-sm'
-            : 'bg-transparent'
+            ? "backdrop-blur-md bg-zinc-700/50 shadow-sm"
+            : "bg-transparent"
         }
       `}
     >
@@ -37,7 +37,7 @@ export default function Header() {
           className={`
             font-bold text-xl sm:text-2xl tracking-tight
             transition-colors duration-200
-            ${scrolled ? 'text-zinc-50' : 'text-zinc-900'}
+            ${scrolled ? "text-zinc-50" : "text-zinc-900"}
           `}
         >
           Lucas Fabri
@@ -45,19 +45,21 @@ export default function Header() {
 
         {/* Navegação */}
         <nav className="flex items-center gap-8 text-sm sm:text-base">
-          <Link
-            to="/about"
+          <a
+            href="https://github.com/Cunhaww-dev"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`
               transition-colors duration-200
               ${
                 scrolled
-                  ? 'text-zinc-50 hover:text-zinc-300'
-                  : 'text-zinc-800 hover:text-zinc-950'
+                  ? "text-zinc-50 hover:text-zinc-300"
+                  : "text-zinc-800 hover:text-zinc-950"
               }
             `}
           >
             Sobre
-          </Link>
+          </a>
 
           <Link
             to="/contact"
@@ -66,8 +68,8 @@ export default function Header() {
               transition-colors duration-200
               ${
                 scrolled
-                  ? 'bg-white text-zinc-900 hover:bg-zinc-200'
-                  : 'bg-zinc-900 text-zinc-50 hover:bg-zinc-800'
+                  ? "bg-white text-zinc-900 hover:bg-zinc-200"
+                  : "bg-zinc-900 text-zinc-50 hover:bg-zinc-800"
               }
             `}
           >
@@ -76,5 +78,5 @@ export default function Header() {
         </nav>
       </div>
     </header>
-  )
+  );
 }

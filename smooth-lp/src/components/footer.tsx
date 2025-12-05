@@ -1,14 +1,14 @@
-import { Github, Linkedin, ArrowUp } from 'lucide-react'
+import { Github, Linkedin, ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <footer
       id="site-footer"
-      className="relative bg-slate-100 text-gray-900 border-t border-gray-200"
+      className="relative bg-slate-100 text-gray-900 border-t border-gray-200 z-20"
     >
       {/* Divider sutil */}
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-gray-300 to-transparent" />
@@ -85,5 +85,5 @@ export default function Footer() {
         </button>
       </div>
     </footer>
-  )
+  );
 }
