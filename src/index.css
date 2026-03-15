@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --default-font-family: Geist, sans-serif;
+  --font-mono: JetBrains Mono;
+
+  --font-sans:
+    "Geist", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --font-nunito: "Nunito Sans", var(--font-sans);
+
+  /* Custom zinc palette - subtle dark backgrounds with light text */
+  --color-zinc-950: #0f0f11; /* Main background */
+  --color-zinc-900: #131316; /* Sidebar background (very subtle difference) */
+  --color-zinc-800: #18181b; /* Card/elevated background */
+  --color-zinc-700: #27272a; /* Borders */
+  --color-zinc-600: #3f3f46; /* Hover states */
+  --color-zinc-500: #52525b; /* Active/interactive */
+  --color-zinc-400: #a1a1aa; /* Muted text */
+  --color-zinc-300: #d4d4d8; /* Secondary text */
+  --color-zinc-200: #e4e4e7; /* Primary text */
+  --color-zinc-100: #f4f4f5; /* Bright text */
+  --color-zinc-50: #fafafa; /* Brightest highlights */
+}
+
+@layer base {
+  body {
+    @apply bg-zinc-50 text-zinc-800 antialiased;
+    overflow-x: hidden;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-fade-in-delay-1s {
+  animation: fade-in 1s ease-out 1s forwards;
+}
+
+/* safe-area helpers — iOS (env + constant) e fallback zero */
+.safe-area-top {
+  /* safari/new spec */
+  padding-top: env(safe-area-inset-top);
+  /* legacy iOS */
+  padding-top: constant(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: constant(safe-area-inset-bottom);
+}
+
+/* utilitário que combina compensação fixa (header height) + safe area */
+.pt-header-safe {
+  /* exemplo: header tem 5rem (h-20 = 5rem) -> ajusta conforme sua altura */
+  padding-top: calc(5rem + env(safe-area-inset-top));
+  padding-top: calc(5rem + constant(safe-area-inset-top));
+}
+
+/* fallback com valor padrão (para navegadores que não suportam env) */
+.pt-header-safe-fallback {
+  padding-top: calc(5rem + var(--safe-area-top, 0px));
+}
